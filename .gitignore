@@ -2,3 +2,4 @@
 .DS_Store
 /bts_images
 bts_recognition/uploads
+bts_recognition/models/bts_model_final4.keras
