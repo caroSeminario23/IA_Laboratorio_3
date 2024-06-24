@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTS Face Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>BTS Face Recognition</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="file-upload" class="custom-file-upload">
+                <i class="fas fa-cloud-upload-alt"></i> Choose an image
+            </label>
+            <input id="file-upload" type="file" name="file" accept="image/*" required onchange="updateFileName()">
+            <span id="file-name">No file chosen</span>
+            <button type="submit">Upload and Recognize</button>
+        </form>
+    </div>
+
+    <script>
+        function updateFileName() {
+            const fileInput = document.getElementById('file-upload');
+            const fileName = document.getElementById('file-name');
+            fileName.textContent = fileInput.files[0].name;
+        }
+    </script>
+</body>
+</html>
